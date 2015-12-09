@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: Super Idea with lots of potential
+  level_of_fun: 4
+  level_of_complexity: 1
+
+two:
+  description: Shit idea that will only go wrong
+  level_of_fun: 1
+  level_of_complexity: 1

@@ -52,7 +52,6 @@ gem 'bootswatch-rails'
 gem 'bootstrap-sass'
 
 #easy to insert and edit forms
-gem 'simple_form'
 
 #user creation and authentication - see user model and devise view
 gem 'devise'
