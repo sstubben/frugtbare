@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  level_of_fun: 1
+  level_of_complexity: 1
+
+two:
+  description: MyString
+  level_of_fun: 1
+  level_of_complexity: 1
