@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160120050754) do
 
-  create_table "ideas", force: true do |t|
+  create_table "ideas", force: :cascade do |t|
     t.string   "description"
     t.integer  "level_of_fun"
     t.integer  "level_of_complexity"

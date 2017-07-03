@@ -42,3 +42,5 @@ bower.json
 
 *.sublime-project
 *.sublime-workspace
+
+coverage
