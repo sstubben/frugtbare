@@ -13,8 +13,6 @@ group :test do
   gem 'simplecov', :require => false
 end
 
-
-
 # Use postgresql as the database for Active Record
 
 group :production do
@@ -27,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'omniauth'
 gem 'rails', '~> 4.2'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -36,4 +35,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'uglifier', '~> 1.3.0'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'

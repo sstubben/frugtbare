@@ -7,6 +7,10 @@ AllCops:
   Exclude:
     - Gemfile
     - db/schema.rb
+    - db/migrate/**
+    - config/initializers/**
     - 'bin/bundle'
     - 'bin/rails'
     - 'bin/rake'
+Documentation:
+    Enabled: false

@@ -1,8 +1,16 @@
 require 'test_helper'
 
 class IdeasControllerTest < ActionController::TestCase
+  include Devise::Test::ControllerHelpers
+
   setup do
     @idea = ideas(:one)
+    @user = users(:user)
+    sign_in @user
+  end
+
+  def teardown
+    sign_out @user
   end
 
   test "should get index" do

@@ -4,8 +4,10 @@ one:
   description: MyString
   level_of_fun: 1
   level_of_complexity: 1
+  user: user
 
 two:
   description: MyString
   level_of_fun: 1
   level_of_complexity: 1
+  user: user
