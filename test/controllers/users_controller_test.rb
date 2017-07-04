@@ -8,23 +8,20 @@ class UsersControllerTest < ActionController::TestCase
     @user = users(:user)
   end
 
-  describe 'get index' do
-    test 'should get index when admin' do
-      sign_in @admin
-      get :index
-      assert_response :success
-      assert_not_nil assigns(:users)
-    end
+  test 'should get index when admin' do
+    sign_in @admin
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:users)
+  end
 
-    test 'should redirect to root on get index when user' do
-      sign_in @user
-      get :index
-      assert_redirected_to root_path
-    end
+  test 'should redirect to root on get index when user' do
+    sign_in @user
+    get :index
+    assert_redirected_to root_path
   end
 
 =begin
-
   test 'should show user' do
     get :show, id: @user
     assert_response :success

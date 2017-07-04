@@ -1,7 +1,7 @@
 require 'test_helper'
 include IntegrationMacros
 
-class IdeaFlowTest < Capybara::Rails::TestCase
+class IdeasFlowTest < Capybara::Rails::TestCase
   def setup
     @one = ideas :one
     @two = ideas :two
