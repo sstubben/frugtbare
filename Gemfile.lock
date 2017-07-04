@@ -37,6 +37,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    ansi (1.5.0)
     arel (6.0.4)
     ast (2.3.0)
     autoprefixer-rails (7.1.1.2)
@@ -96,6 +97,11 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    minitest-reporters (1.1.14)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.12.1)
     multipart-post (2.0.0)
     naught (1.1.0)
@@ -225,6 +231,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  minitest-reporters
   pg
   rails (~> 4.2)
   rails_12factor

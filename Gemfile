@@ -8,7 +8,11 @@ group :development, :test do
   gem 'rubocop'
 end
 
-gem 'simplecov', :require => false, :group => :test
+group :test do
+  gem 'minitest-reporters'
+  gem 'simplecov', :require => false
+end
+
 
 
 # Use postgresql as the database for Active Record
