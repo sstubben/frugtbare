@@ -18,4 +18,11 @@ class UsersFlowTest < Capybara::Rails::TestCase
     assert page.has_content?(@admin.email)
     assert page.has_content?(@user.email)
   end
+
+  test 'user show' do
+    login_with_warden(@admin)
+    visit user_path(@user.id)
+
+    assert page.has_content?(@user.email)
+  end
 end

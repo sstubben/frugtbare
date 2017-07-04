@@ -20,7 +20,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
         <li>
-          <%= link_to current_user.email, root_path %>
+          <%= link_to current_user.email, user_path(current_user) %>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>

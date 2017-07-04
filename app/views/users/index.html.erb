@@ -1,4 +1,4 @@
-<h1>Listing user</h1>
+<h1>Listing users</h1>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', '#' %></td>
+        <td><%= link_to 'Show', user_path(user) %></td>
         <td><%= link_to 'Edit', '#' %></td>
         <td><%= link_to 'Destroy', '#', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

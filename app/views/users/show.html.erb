@@ -1,0 +1,9 @@
+<%= image_tag avatar_url(@user) %>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Edit', edit_user_registration_path %> |
+<%= link_to 'Back', :back %>
