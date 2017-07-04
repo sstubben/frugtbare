@@ -9,6 +9,8 @@ group :development, :test do
 end
 
 group :test do
+  gem "poltergeist"
+  gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
   gem 'simplecov', :require => false
 end
