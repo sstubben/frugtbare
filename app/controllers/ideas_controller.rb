@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -19,6 +19,7 @@ class IdeasController < ApplicationController
   end
 
   def edit
+    # @user = @idea.user unless @idea.user_id.nil?
   end
 
   def create
@@ -38,6 +39,7 @@ class IdeasController < ApplicationController
   end
 
   private
+
     def set_idea
       @idea = Idea.find(params[:id])
     end
