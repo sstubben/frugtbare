@@ -26,10 +26,12 @@ end
 gem 'bootswatch-rails'
 gem 'bootstrap-sass'
 gem 'devise'
+gem "figaro"
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'omniauth'
 gem 'rails', '~> 4.2'
+gem "recaptcha", require: "recaptcha/rails"
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'turbolinks'

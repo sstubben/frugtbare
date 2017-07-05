@@ -46,3 +46,6 @@ bower.json
 coverage
 
 frugtbare_test
+local_env.yml
+# Ignore application configuration
+/config/application.yml

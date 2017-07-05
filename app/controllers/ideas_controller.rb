@@ -19,13 +19,21 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    # @user = @idea.user unless @idea.user_id.nil?
+    if current_user == @idea.user || current_user.admin
+      @idea
+    else
+      redirect_to @idea, alert: 'You do not have access to edit this idea'
+    end
   end
 
   def create
     @idea = Idea.new(idea_params)
-    @idea.save
-    respond_with(@idea)
+    @idea.user = current_user if user_signed_in?
+    if verify_recaptcha(model: @idea) && @idea.save
+      redirect_to @idea
+    else
+      render 'new'
+    end
   end
 
   def update

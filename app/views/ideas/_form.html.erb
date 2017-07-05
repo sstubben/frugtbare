@@ -11,18 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :level_of_fun %><br>
-    <%= f.number_field :level_of_fun %>
+    <%= f.number_field :level_of_fun, class: 'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :level_of_complexity %><br>
-    <%= f.number_field :level_of_complexity %>
+    <%= f.number_field :level_of_complexity, class: 'form-control' %>
   </div>
+  <% unless f.object.persisted? %>
+  <div class="form-group">
+    <%= recaptcha_tags %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit 'Submit idea' %>
   </div>

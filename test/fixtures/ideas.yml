@@ -11,3 +11,8 @@ two:
   level_of_fun: 5
   level_of_complexity: 5
   user: user
+
+three:
+  description: Third idea
+  level_of_fun: 1
+  level_of_complexity: 5
