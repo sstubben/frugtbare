@@ -42,8 +42,12 @@ class IdeasController < ApplicationController
   end
 
   def destroy
-    @idea.destroy
-    respond_with(@idea)
+    if current_user == @idea.user || current_user.admin
+      @idea.destroy
+      respond_with(@idea)
+    else
+      redirect_to @idea, alert: 'You do not have access to delete this idea'
+    end
   end
 
   private
