@@ -44,3 +44,5 @@ bower.json
 *.sublime-workspace
 
 coverage
+
+frugtbare_test
