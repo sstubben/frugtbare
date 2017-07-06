@@ -9,11 +9,12 @@ group :development, :test do
 end
 
 group :test do
-  gem "poltergeist"
+  gem 'launchy'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
+  gem "poltergeist"
+  gem 'shoulda', '~> 3.5'
   gem 'simplecov', :require => false
-  gem 'launchy'
 end
 
 # Use postgresql as the database for Active Record

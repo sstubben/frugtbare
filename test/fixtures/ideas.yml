@@ -16,3 +16,8 @@ three:
   description: Third idea
   level_of_fun: 1
   level_of_complexity: 5
+
+four:
+  description:
+  level_of_fun:
+  level_of_complexity:

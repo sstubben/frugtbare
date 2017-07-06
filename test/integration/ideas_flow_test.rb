@@ -46,7 +46,7 @@ class IdeasFlowTest < Capybara::Rails::TestCase
   test 'idea edit - as visitor' do
     visit edit_idea_path(@three)
 
-    assert page.has_content?('Sign up to edit ideas')
+    assert page.has_content?('You need to sign in or sign up before continuing.')
   end
 
   test 'idea edit - as owner' do
