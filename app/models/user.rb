@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
     return 0 unless ideas.any?
     ideas.ideas_created_today.count
   end
+
+  def number_of_total_ideas
+    return 0 unless ideas.any?
+    ideas.count
+  end
 end

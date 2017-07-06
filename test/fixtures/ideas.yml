@@ -23,3 +23,4 @@ four:
   level_of_fun:
   level_of_complexity:
   created_at: <%= 2.weeks.ago %>
+  user: user

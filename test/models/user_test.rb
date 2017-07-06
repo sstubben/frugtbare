@@ -2,7 +2,8 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user ||= users(:user)
+    @user = users(:user)
+    @admin = users(:admin)
   end
 
   test 'valid user' do
@@ -26,7 +27,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'ideas association' do
-    assert_equal 2, @user.ideas.size
+    assert_equal 3, @user.ideas.size
   end
 
   # validators
@@ -36,5 +37,10 @@ class UserTest < ActiveSupport::TestCase
   # methods
   test '#number_of_ideas_created_today' do
     assert_equal 2, @user.number_of_ideas_created_today
+  end
+
+  test '#number_of_total_ideas' do
+    assert_equal 3, @user.number_of_total_ideas
+    assert_equal 0, @admin.number_of_total_ideas
   end
 end
