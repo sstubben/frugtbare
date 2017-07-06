@@ -12,14 +12,12 @@
 
 	<%= render 'partials/header' %>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
 	<div class="container">
-		<%= yield %>
-	</div>
+    <%= render 'partials/flash_messages' %>
+    <%= yield %>
+  </div>
 
-	<%= render 'partials/footer' %>
+  <%= render 'partials/footer' %>
 
 </body>
 </html>
