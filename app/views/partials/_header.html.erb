@@ -16,9 +16,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
      <ul class="nav navbar-nav">
         <li><a href="#about">About</a></li>
+        <li>
+          <%= link_to "Ideas", ideas_path %>
+        </li>
     </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+        <li class="active">
+          <%= link_to new_idea_path do %>
+            Submit idea!
+            <span class="badge"><%= current_user.number_of_ideas_created_today %></span>
+          <% end %>
+        </li>
         <li>
           <%= link_to current_user.email, user_path(current_user) %>
         </li>
