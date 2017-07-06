@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   has_many :ideas
 
   validates :email, :encrypted_password, presence: true
+
+  def number_of_ideas_created_today
+    return 0 unless ideas.any?
+    ideas.ideas_created_today.count
+  end
 end

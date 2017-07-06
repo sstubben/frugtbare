@@ -22,7 +22,7 @@ class IdeasController < ApplicationController
     if current_user == @idea.user || current_user.admin
       @idea
     else
-      redirect_to @idea, alert: 'You do not have access to edit this idea'
+      redirect_to @idea, alert: 'You do not have access to edit this idea.'
     end
   end
 
@@ -30,7 +30,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
     @idea.user = current_user if user_signed_in?
     if verify_recaptcha(model: @idea) && @idea.save
-      redirect_to @idea
+      redirect_to @idea, flash: { success: 'Idea created.' }
     else
       render 'new'
     end
@@ -46,7 +46,7 @@ class IdeasController < ApplicationController
       @idea.destroy
       respond_with(@idea)
     else
-      redirect_to @idea, alert: 'You do not have access to delete this idea'
+      redirect_to @idea, alert: 'You do not have access to delete this idea.'
     end
   end
 

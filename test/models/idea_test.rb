@@ -21,6 +21,7 @@ class IdeaTest < ActiveSupport::TestCase
     assert_equal @user, @one.user
   end
 
+  # validators
   should validate_presence_of(:description)
   should validate_numericality_of(:level_of_fun).only_integer
   should validate_numericality_of(:level_of_complexity).only_integer
@@ -30,4 +31,11 @@ class IdeaTest < ActiveSupport::TestCase
   should validate_numericality_of(:level_of_complexity)
     .is_greater_than_or_equal_to(0)
     .is_less_than_or_equal_to(5)
+
+  # scopes
+  test '#ideas_created_today' do
+    assert_includes Idea.ideas_created_today, ideas(:one)
+    assert_equal 2, Idea.ideas_created_today.size
+    refute_includes Idea.ideas_created_today, ideas(:three)
+  end
 end

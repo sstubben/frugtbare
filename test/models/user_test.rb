@@ -29,6 +29,12 @@ class UserTest < ActiveSupport::TestCase
     assert_equal 2, @user.ideas.size
   end
 
+  # validators
   should validate_presence_of(:email)
   should validate_presence_of(:encrypted_password)
+
+  # methods
+  test '#number_of_ideas_created_today' do
+    assert_equal 2, @user.number_of_ideas_created_today
+  end
 end

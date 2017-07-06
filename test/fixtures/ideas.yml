@@ -16,8 +16,10 @@ three:
   description: Third idea
   level_of_fun: 1
   level_of_complexity: 5
+  created_at: <%= 2.weeks.ago %>
 
 four:
   description:
   level_of_fun:
   level_of_complexity:
+  created_at: <%= 2.weeks.ago %>
