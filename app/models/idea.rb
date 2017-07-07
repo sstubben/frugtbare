@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Idea < ActiveRecord::Base
   belongs_to :user
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
@@ -10,10 +12,10 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first
     if user.nil?
-      user.email = auth.info.email
-      user.password ||= Devise.friendly_token[0, 20]
+      user = User.new(
+        email: auth.info.email, password: Devise.friendly_token[0, 20]
+      )
       user.assign_twitter_authentication(auth)
-      user.save!
     elsif user.provider.nil?
       user.assign_twitter_authentication(auth)
       user.save!
@@ -33,10 +35,12 @@ class User < ActiveRecord::Base
   end
 
   def number_of_ideas_created_today
+    return 0 unless ideas.any?
     ideas.created_today.count
   end
 
   def number_of_total_ideas
+    return 0 unless ideas.any?
     ideas.count
   end
 end

@@ -16,6 +16,9 @@ db:schema:cache:dump
 db:schema:dump
 db:schema:load
 db:seed
+db:sessions:clear
+db:sessions:create
+db:sessions:trim
 db:setup
 db:structure:dump
 db:structure:load
@@ -37,3 +40,4 @@ test:db
 time:zones:all
 tmp:clear
 tmp:create
+tweeter:daily_idea_tweet

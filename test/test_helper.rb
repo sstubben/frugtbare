@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ENV['RAILS_ENV'] ||= 'test'
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
@@ -7,7 +9,8 @@ end
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/reporters'
-require 'integration_macros'
+require 'support/integration_macros'
+require 'support/omniauth_macros'
 require 'shoulda'
 
 reporter_options = { color: true }

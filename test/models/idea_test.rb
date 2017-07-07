@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class IdeaTest < ActiveSupport::TestCase
@@ -32,10 +34,16 @@ class IdeaTest < ActiveSupport::TestCase
     .is_greater_than_or_equal_to(0)
     .is_less_than_or_equal_to(5)
 
+  # methods
+  test '#rating' do
+    assert_equal 0, @one.rating
+    assert_equal(-4, @three.rating)
+  end
+
   # scopes
-  test '#ideas_created_today' do
-    assert_includes Idea.ideas_created_today, ideas(:one)
-    assert_equal 2, Idea.ideas_created_today.size
-    refute_includes Idea.ideas_created_today, ideas(:three)
+  test '#created_today' do
+    assert_includes Idea.created_today, ideas(:one)
+    assert_equal 2, Idea.created_today.size
+    refute_includes Idea.created_today, ideas(:three)
   end
 end
