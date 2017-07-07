@@ -4,7 +4,7 @@ ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 group :development, :test do
-  gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'sqlite3'
   gem 'rubocop'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class IdeasController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
