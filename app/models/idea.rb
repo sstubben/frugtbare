@@ -10,4 +10,8 @@ class Idea < ActiveRecord::Base
   }
 
   scope :ideas_created_today, -> { where('DATE(created_at)=?', Time.zone.today) }
+
+  def rating
+    level_of_fun - level_of_complexity
+  end
 end

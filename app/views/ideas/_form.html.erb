@@ -13,7 +13,7 @@
     <%= f.label :level_of_complexity %><br>
     <%= f.number_field :level_of_complexity, class: 'form-control' %>
   </div>
-  <% unless f.object.persisted? %>
+  <% unless user_signed_in? %>
   <div class="form-group">
     <%= recaptcha_tags %>
   </div>

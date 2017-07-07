@@ -4,6 +4,7 @@ ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 group :development, :test do
+  gem 'pry-rails'
   gem 'sqlite3'
   gem 'rubocop'
 end
@@ -24,6 +25,7 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'activerecord-session_store'
 gem 'bootswatch-rails'
 gem 'bootstrap-sass'
 gem 'devise'
@@ -31,6 +33,7 @@ gem "figaro"
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'rails', '~> 4.2'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'sass-rails', '~> 4.0.3'
