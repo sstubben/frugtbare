@@ -30,8 +30,12 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.new(idea_params)
-    @idea.user = current_user if user_signed_in?
-    if verify_recaptcha(model: @idea) && @idea.save
+    if user_signed_in?
+      @idea.user = current_user
+    else
+      verify_recaptcha(model: @idea)
+    end
+    if @idea.save
       redirect_to @idea, flash: { success: 'Idea created.' }
     else
       render 'new'
